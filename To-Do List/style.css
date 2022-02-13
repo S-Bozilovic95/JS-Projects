@@ -11,3 +11,47 @@ ul{
 .precrtan {
     text-decoration: line-through;
 }
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    color: white;
+}
+
+.toDo{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(44, 44, 44);
+    padding: 10%;
+    border: 3px solid rgb(24, 23, 23);
+    border-radius: 10px;
+}
+
+.toDo ul{
+    background-color: rgba(240, 248, 255, 0.171);
+    border-radius: 5px;
+}
+.toDo ul li{
+    font-size: 1.2rem;
+    padding: 10px 5px;
+}
+ .toDo h2{
+     font-size: 2rem;
+     text-align: center;
+ }
+
+ .toDo input{
+     padding: 6px 10px;
+     border-radius: 5px;
+     border: none;
+     margin: 10px 0px;
+     font-size: 1.2rem;
+ }
+
+ .toDo label{
+    font-size: 1.2rem;
+    padding: 0px 5px;
+ }
+
+ 
