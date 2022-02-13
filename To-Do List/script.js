@@ -1,6 +1,7 @@
 let li = document.querySelectorAll("li");
 let ul = document.querySelector("ul");
-let btn = document.querySelector("button");
+// let btn = document.querySelector("button");
+let input = document.querySelector("input[type='text']");
 
 // (1. verzija)
 
@@ -14,31 +15,30 @@ let btn = document.querySelector("button");
 
 // 2. verzija
 
-btn.addEventListener("click",(e)=>{
-    e.preventDefault;
-
-    let input = document.querySelector("input");
+input.addEventListener("keyup",(e)=>{
+    e.preventDefault();
     let elem = input.value;
     let liItem = document.createElement("li");
     let radio = document.querySelector(`input[type="radio"]:checked`);
 
-
-    if(elem.trim() === ""){
-        alert(`wrong input!`);
-    }else{
-
-        liItem.innerHTML= elem;
+    if(e.keyCode==13){
         
-        if(radio.value==="pocetak"){
-                liItem.innerHTML= elem;
-                ul.prepend(liItem);
+        if(elem.trim() === ""){
+            alert(`wrong input!`);
         }else{
-                liItem.innerHTML= elem;
-                ul.appendChild(liItem);
-        }
+            liItem.innerHTML= elem;
+    
+            if(radio.value==="pocetak"){
+                    liItem.innerHTML= elem;
+                    ul.prepend(liItem);
+            }else{
+                    liItem.innerHTML= elem;
+                    ul.appendChild(liItem);
+            }
+            input.value="";
+        }  
     }
 
-    input.value="";
 
 });
 
