@@ -4,7 +4,6 @@ let ul = document.querySelector("ul");
 let input = document.querySelector("input[type='text']");
 
 // (1. verzija)
-
 // li.forEach(n=>{
 //     n.addEventListener(`click`,(e)=>{
 //         e.preventDefault;
@@ -14,15 +13,14 @@ let input = document.querySelector("input[type='text']");
 
 
 // 2. verzija
-
 input.addEventListener("keyup",(e)=>{
     e.preventDefault();
     let elem = input.value;
     let liItem = document.createElement("li");
     let radio = document.querySelector(`input[type="radio"]:checked`);
 
-    if(e.keyCode==13){
-        
+    // e.keyCode je br koji predstavlja svako dugme na tastaturi. Npr enter je broj 13
+    if(e.key==`Enter`){
         if(elem.trim() === ""){
             alert(`wrong input!`);
         }else{
@@ -38,11 +36,10 @@ input.addEventListener("keyup",(e)=>{
             input.value="";
         }  
     }
-
-
 });
 
 
+// brisanje stavki
 ul.addEventListener("click",(e)=>{
     // console.log(e.target,e.target.tagName);
     if(e.target.tagName === 'LI'){
