@@ -40,6 +40,7 @@ input.addEventListener("keyup",(e)=>{
 
 
 // brisanje stavki
+
 ul.addEventListener("click",(e)=>{
     // console.log(e.target,e.target.tagName);
     if(e.target.tagName === 'LI'){
