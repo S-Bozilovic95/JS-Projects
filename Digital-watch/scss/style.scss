@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.watch{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+
+    .box{
+        border: 1px solid red;
+        padding: 40px 80px;
+    }
+
+    #ispis{
+        font-size: 5rem;
+    }
+
+    ul{
+        list-style-type: none;
+        display: flex;
+
+        button{
+            padding:10px 20px;
+            border-style: none;
+            margin: 10px;
+            font-size: 2rem;
+            background-color: rgb(88, 167, 241);
+            color: white;
+
+            :hover{
+                background-color: blue;
+                
+            }
+        }
+    }
+
+}

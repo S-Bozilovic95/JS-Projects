@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh; }
+  .watch .box {
+    border: 1px solid red;
+    padding: 40px 80px; }
+  .watch #ispis {
+    font-size: 5rem; }
+  .watch ul {
+    list-style-type: none;
+    display: flex; }
+    .watch ul button {
+      padding: 10px 20px;
+      border-style: none;
+      margin: 10px;
+      font-size: 2rem;
+      background-color: #58a7f1;
+      color: white; }
+      .watch ul button :hover {
+        background-color: blue; }
+
+/*# sourceMappingURL=style.css.map */
