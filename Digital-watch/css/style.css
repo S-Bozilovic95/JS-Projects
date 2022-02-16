@@ -1,30 +1,70 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  scroll-behavior: smooth; }
 
-.watch {
+.dark {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #d3d4ca; }
+  .dark .box {
+    border-radius: 10px;
+    padding: 40px 80px;
+    background-color: #353631; }
+  .dark #ispis {
+    font-size: 7rem;
+    color: #fec107; }
+  .dark ul {
+    list-style-type: none;
+    display: flex; }
+    .dark ul li {
+      margin: 20px; }
+      .dark ul li button {
+        padding: 10px 25px;
+        border-style: none;
+        border-radius: 10px;
+        font-size: 2.5rem;
+        background-color: #353631;
+        color: #f8f8f8; }
+        .dark ul li button:hover {
+          background-color: #51524c;
+          cursor: pointer;
+          transition: 0.3s ease;
+          color: #fec107; }
+
+.light {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   height: 100vh; }
-  .watch .box {
-    border: 1px solid red;
-    padding: 40px 80px; }
-  .watch #ispis {
-    font-size: 5rem; }
-  .watch ul {
+  .light .box {
+    border-radius: 10px;
+    padding: 40px 80px;
+    background-color: rgba(51, 104, 153, 0.842); }
+  .light #ispis {
+    font-size: 7rem;
+    color: white; }
+  .light ul {
     list-style-type: none;
     display: flex; }
-    .watch ul button {
-      padding: 10px 20px;
-      border-style: none;
-      margin: 10px;
-      font-size: 2rem;
-      background-color: #58a7f1;
-      color: white; }
-      .watch ul button :hover {
-        background-color: blue; }
+    .light ul li {
+      margin: 20px; }
+      .light ul li button {
+        padding: 10px 25px;
+        border-style: none;
+        border-radius: 10px;
+        font-size: 2.5rem;
+        background-color: rgba(51, 104, 153, 0.842);
+        color: white; }
+        .light ul li button:hover {
+          background-color: #519ce2;
+          cursor: pointer;
+          transition: 0.3s ease; }
 
 /*# sourceMappingURL=style.css.map */

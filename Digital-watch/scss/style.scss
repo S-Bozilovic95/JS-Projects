@@ -1,43 +1,121 @@
+// VARIABLES
+    $blue:rgba(51, 104, 153, 0.842);
+    $lightBlue:rgb(81, 156, 226);
+    $dark:#353631;
+    $lightDark:#51524c;
+    $white:white;
+    $yellow:#fec107;
+    $gray: rgba(133, 132, 132, 0.548);
+    $lightgray: #f8f8f8;
+    $transition: .3s ease;
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth; 
 }
 
 
-.watch{
+
+
+.dark{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     height: 100vh;
+    background-color: #d3d4ca;
 
     .box{
-        border: 1px solid red;
+        
+        border-radius: 10px;
         padding: 40px 80px;
+        background-color: $dark;
+        
     }
 
     #ispis{
-        font-size: 5rem;
+        font-size: 7rem;
+        color: $yellow;
     }
 
     ul{
         list-style-type: none;
         display: flex;
 
-        button{
-            padding:10px 20px;
-            border-style: none;
-            margin: 10px;
-            font-size: 2rem;
-            background-color: rgb(88, 167, 241);
-            color: white;
+       li{
+        margin: 20px;
 
-            :hover{
-                background-color: blue;
-                
+        button{
+            
+            padding:10px 25px;
+            border-style: none;
+            border-radius: 10px;
+            font-size: 2.5rem;
+            background-color: $dark;
+            color: $lightgray;
+
+            &:hover{
+                background-color: $lightDark;
+                cursor: pointer;
+                transition: $transition;
+                color: $yellow;
             }
         }
+
+       }
+    }
+
+}
+
+.light{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+
+    
+
+    .box{
+        
+        border-radius: 10px;
+        padding: 40px 80px;
+        background-color: $blue;
+    }
+
+    #ispis{
+        font-size: 7rem;
+        color: $white;
+    }
+
+    ul{
+        list-style-type: none;
+        display: flex;
+
+       li{
+        margin: 20px;
+
+        button{
+            
+            padding:10px 25px;
+            border-style: none;
+            border-radius: 10px;
+            font-size: 2.5rem;
+            background-color: $blue;
+            color: $white;
+
+            &:hover{
+                background-color: $lightBlue;
+                cursor: pointer;
+                transition: $transition;
+            }
+        }
+
+       }
     }
 
 }
