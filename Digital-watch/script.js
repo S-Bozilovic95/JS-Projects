@@ -1,6 +1,7 @@
 
-let time = document.querySelector(".watch");
+let time = document.querySelector("#watch");
 let ispis = document.querySelector("#ispis");
+let themes = document.querySelector(".themes");
 let watch = null;
 
 time.addEventListener("click",(e)=>{
@@ -25,4 +26,19 @@ time.addEventListener("click",(e)=>{
         watch = null;
     }
 
+})
+
+
+themes.addEventListener("click",(e)=>{
+    e.preventDefault();
+
+    if(e.target.id === "light"){
+        time.classList.remove("light");
+        time.classList.remove("dark");
+        time.classList.toggle("light");
+    }else if(e.target.id ==="dark"){
+        time.classList.remove("light");
+        time.classList.remove("dark");
+        time.classList.toggle("dark");
+    }
 })

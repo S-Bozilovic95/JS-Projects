@@ -20,7 +20,6 @@
 
 
 .dark{
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,12 +27,45 @@
     height: 100vh;
     background-color: #d3d4ca;
 
+    .themes{
+        padding: 20px;
+
+        #dark{
+            background-color: $lightDark;
+            color: $yellow;
+
+            &:hover{
+                background-color: $gray;
+            }
+        }
+
+        #light{
+            background-color: $blue;
+            color: $white;
+
+            &:hover{
+                background-color: $lightBlue;
+            }
+        }
+
+        button{
+            padding: 20px;
+            border-radius: 20px;
+            border-style: none;
+            font-size: 1.2rem;
+
+            &:hover{
+                cursor: pointer;
+                transition: $transition;
+            }
+        }
+    }
+
+
     .box{
-        
         border-radius: 10px;
         padding: 40px 80px;
-        background-color: $dark;
-        
+        background-color: $dark;   
     }
 
     #ispis{
@@ -71,13 +103,46 @@
 }
 
 .light{
-
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     height: 100vh;
 
+    .themes{
+        padding: 20px;
+
+        #dark{
+            background-color: $lightDark;
+            color: $yellow;
+
+            &:hover{
+                background-color: $gray;
+            }
+        }
+
+        #light{
+            background-color: $blue;
+            color: $white;
+
+            &:hover{
+                background-color: $lightBlue;
+            }
+        }
+
+
+        button{
+            padding: 20px;
+            border-radius: 20px;
+            border-style: none;
+            font-size: 1.2rem;
+
+            &:hover{
+                cursor: pointer;
+                transition: $transition;
+            }
+        }
+    }
     
 
     .box{
@@ -119,3 +184,5 @@
     }
 
 }
+
+  

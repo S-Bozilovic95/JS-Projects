@@ -5,13 +5,32 @@
   scroll-behavior: smooth; }
 
 .dark {
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   height: 100vh;
   background-color: #d3d4ca; }
+  .dark .themes {
+    padding: 20px; }
+    .dark .themes #dark {
+      background-color: #51524c;
+      color: #fec107; }
+      .dark .themes #dark:hover {
+        background-color: rgba(133, 132, 132, 0.548); }
+    .dark .themes #light {
+      background-color: rgba(51, 104, 153, 0.842);
+      color: white; }
+      .dark .themes #light:hover {
+        background-color: #519ce2; }
+    .dark .themes button {
+      padding: 20px;
+      border-radius: 20px;
+      border-style: none;
+      font-size: 1.2rem; }
+      .dark .themes button:hover {
+        cursor: pointer;
+        transition: 0.3s ease; }
   .dark .box {
     border-radius: 10px;
     padding: 40px 80px;
@@ -43,6 +62,26 @@
   align-items: center;
   flex-direction: column;
   height: 100vh; }
+  .light .themes {
+    padding: 20px; }
+    .light .themes #dark {
+      background-color: #51524c;
+      color: #fec107; }
+      .light .themes #dark:hover {
+        background-color: rgba(133, 132, 132, 0.548); }
+    .light .themes #light {
+      background-color: rgba(51, 104, 153, 0.842);
+      color: white; }
+      .light .themes #light:hover {
+        background-color: #519ce2; }
+    .light .themes button {
+      padding: 20px;
+      border-radius: 20px;
+      border-style: none;
+      font-size: 1.2rem; }
+      .light .themes button:hover {
+        cursor: pointer;
+        transition: 0.3s ease; }
   .light .box {
     border-radius: 10px;
     padding: 40px 80px;
