@@ -24,6 +24,10 @@ buttons.addEventListener("click",e =>{
                     sec = 0;
                     min++;
                 }
+
+                stot = String(stot).padStart(2,"0");
+                sec = String(sec).padStart(2,"0");
+                min = String(min).padStart(2,"0");
     
                 res.innerHTML = `${min}:${sec}:${stot}`;
     
