@@ -1,6 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;700&display=swap");
+@keyframes slider {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box; }
+
+body {
+  font-family: 'Cabin', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/img/sport.jpg"); }
+
+.ispis {
+  padding: 30px;
+  width: 500px;
+  background-color: rgba(61, 182, 61, 0.664);
+  color: white;
+  margin: 20px auto;
+  border-radius: 10px; }
+  @media (max-width: 768px) {
+    .ispis {
+      width: 350px; } }
+  @media (max-width: 280px) {
+    .ispis {
+      width: 200px; } }
+  .ispis #res {
+    text-align: left;
+    font-size: 6rem; }
+    @media (max-width: 768px) {
+      .ispis #res {
+        font-size: 4rem; } }
+    @media (max-width: 280px) {
+      .ispis #res {
+        font-size: 2rem; } }
+
+.ispis2 {
+  background-color: rgba(56, 61, 54, 0.932);
+  color: whitesmoke;
+  width: 500px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 5px; }
+  .ispis2 h2 {
+    font-size: 2rem;
+    font-weight: 300; }
+  .ispis2 #passTime ul {
+    list-style-type: none; }
+    .ispis2 #passTime ul li {
+      font-size: 1.5rem;
+      font-weight: 300;
+      animation: slider;
+      animation-duration: 1s; }
+  @media (max-width: 768px) {
+    .ispis2 {
+      width: 350px; } }
+  @media (max-width: 280px) {
+    .ispis2 {
+      width: 200px; } }
+
+#buttons button {
+  padding: 10px 20px;
+  font-size: 1.4rem;
+  color: whitesmoke;
+  border-style: none;
+  border-radius: 5px;
+  font-weight: 500;
+  margin: 20px 5px; }
+#buttons #start {
+  background-color: #115211; }
+  #buttons #start:hover {
+    background-color: #a8a696;
+    cursor: pointer;
+    transition: 0.2s ease; }
+#buttons #pass {
+  background-color: #bbb231; }
+  #buttons #pass:hover {
+    background-color: #a8a696;
+    cursor: pointer;
+    transition: 0.2s ease; }
+#buttons #pause {
+  background-color: #bbb231; }
+  #buttons #pause:hover {
+    background-color: #a8a696;
+    cursor: pointer;
+    transition: 0.2s ease; }
+#buttons #reset {
+  background-color: #851919; }
+  #buttons #reset:hover {
+    background-color: #a8a696;
+    cursor: pointer;
+    transition: 0.2s ease; }
 
 /*# sourceMappingURL=style.css.map */

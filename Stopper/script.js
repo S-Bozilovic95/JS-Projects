@@ -29,7 +29,7 @@ buttons.addEventListener("click",e =>{
                 sec = String(sec).padStart(2,"0");
                 min = String(min).padStart(2,"0");
     
-                res.innerHTML = `${min}:${sec}:${stot}`;
+                res.innerHTML = `${min}:${sec}.${stot}`;
     
             },1000 / 100)
         }
@@ -39,7 +39,12 @@ buttons.addEventListener("click",e =>{
         br++;
         let ul = document.createElement("ul");
         let li = document.createElement ("li");
-        let time = document.createTextNode(`${br}. - ${min}:${sec}:${stot}`);
+
+        stot = String(stot).padStart(2,"0");
+        sec = String(sec).padStart(2,"0");
+        min = String(min).padStart(2,"0");
+
+        let time = document.createTextNode(`${br}. - ${min}:${sec}.${stot}`);
 
         li.appendChild(time);
         ul.appendChild(li);
@@ -57,7 +62,7 @@ buttons.addEventListener("click",e =>{
         sec = 0;
         stot =0;
         br = 0
-        res.innerHTML = `00:00:00`;
+        res.innerHTML = `00:00.00`;
         passTime.innerHTML = "";
         stopper = null;
     }
