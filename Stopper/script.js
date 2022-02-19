@@ -18,8 +18,9 @@ buttons.addEventListener("click",e =>{
                 if(stot===100){
                     stot = 0;
                     sec++;
-
-                }else if(sec===60){
+                }
+                
+                if(sec===60){
                     sec = 0;
                     min++;
                 }
@@ -32,7 +33,7 @@ buttons.addEventListener("click",e =>{
     
             },1000 / 100)
         }
-        
+
     }else if(e.target.id === "pass"){
         br++;
         let ul = document.createElement("ul");
@@ -51,7 +52,7 @@ buttons.addEventListener("click",e =>{
     }else if(e.target.id === "pause"){
         clearInterval(stopper);
         stopper = null;
-
+        
     }else if(e.target.id ==="reset"){
         clearInterval(stopper);
         min = 0;
