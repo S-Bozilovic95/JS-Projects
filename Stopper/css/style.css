@@ -73,29 +73,17 @@ body {
   border-radius: 5px;
   font-weight: 500;
   margin: 20px 5px; }
+  #buttons button:hover {
+    background-color: #a8a696;
+    cursor: pointer;
+    transition: 0.2s ease; }
 #buttons #start {
   background-color: #115211; }
-  #buttons #start:hover {
-    background-color: #a8a696;
-    cursor: pointer;
-    transition: 0.2s ease; }
 #buttons #pass {
   background-color: #bbb231; }
-  #buttons #pass:hover {
-    background-color: #a8a696;
-    cursor: pointer;
-    transition: 0.2s ease; }
 #buttons #pause {
   background-color: #bbb231; }
-  #buttons #pause:hover {
-    background-color: #a8a696;
-    cursor: pointer;
-    transition: 0.2s ease; }
 #buttons #reset {
   background-color: #851919; }
-  #buttons #reset:hover {
-    background-color: #a8a696;
-    cursor: pointer;
-    transition: 0.2s ease; }
 
 /*# sourceMappingURL=style.css.map */
