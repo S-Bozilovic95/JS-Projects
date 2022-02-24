@@ -22,6 +22,7 @@ function getItem (resource){
 let divOrder = document.querySelector("#order")
 let formOrder = document.querySelector("#order form");
 let inputCapacity = document.querySelector("#capacity");
+let ispis1 = document.querySelector("#ispis1");
 
 
 function submitForm1(e){
@@ -61,12 +62,13 @@ function submitForm1(e){
         // prices
         .then(data => {
             if(data !== undefined){
+
                 data.forEach(e =>{
                     if(noStock.includes(e.id)){
                         sumPrice += e.price;
                     }
                 });
-                divOrder.innerHTML += `<p>Total sum of products is: ${sumPrice}RSD</p>`;
+                ispis1.innerHTML+= `<p> Total price of items that are not on stock is: ${sumPrice} RSD</p>`;
             }
 
         })
@@ -76,6 +78,12 @@ function submitForm1(e){
 }
 
 formOrder.addEventListener('submit', submitForm1);
+
+
+
+
+
+
 
 // 2.
 let divSearch = document.querySelector("#search");
@@ -121,7 +129,9 @@ function print(e){
 
     checkItems()
     .then(data =>{
-        ispis.appendChild(data);
+        if(data !== undefined){
+            ispis.appendChild(data);
+        }
     })
     .catch(err =>{
         console.log(err);
