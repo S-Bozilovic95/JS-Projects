@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
@@ -16,6 +18,17 @@
         </form>
     </div>
 
+    <div id="search">
+        <form action="">
+            <label for="item">Search Item</label> <input type="text" name="item" id="item"><br>
+            <label for="min">from:</label> <input type="number" name="min" id="min" placeholder="RSD"><br>
+            <label for="max">to:</label> <input type="number" name="max" id="max" placeholder="RSD"><br>
+            <input type="submit" value="Search">
+        </form>
+        <div id="ispis"></div>
+    </div>
+
+    
 
     <script src="script.js"></script>
 </body>

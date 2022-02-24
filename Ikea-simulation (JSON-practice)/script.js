@@ -1,7 +1,3 @@
-let divOrder = document.querySelector("#order")
-let formOrder = document.querySelector("#order form");
-let inputCapacity = document.querySelector("#capacity");
-
 
 function getItem (resource){
 
@@ -22,6 +18,12 @@ function getItem (resource){
 
 }
 
+// 1.
+let divOrder = document.querySelector("#order")
+let formOrder = document.querySelector("#order form");
+let inputCapacity = document.querySelector("#capacity");
+
+
 function submitForm1(e){
     e.preventDefault();
     let noStock =[];
@@ -33,10 +35,10 @@ function submitForm1(e){
         .then(data => {
 
             data.forEach(e=>{
-                if(e.stock === 0){
-                    noStock.push(e);
+                if(e.stock <= 0){
+                    noStock.push(e.id);
                 }
-            })
+            });
             return getItem("JSON/weights.json");
 
         })
@@ -44,15 +46,13 @@ function submitForm1(e){
         .then(data => {
 
             data.forEach(e =>{
-                noStock.forEach(i =>{
-                    if(e.id === i.id){
-                        sumWeight += e.weight;
-                    }
-                })
-            })
+                if(noStock.includes(e.id)){
+                    sumWeight += e.weight;
+                }
+            });
 
             if(inputCapacity.value < sumWeight){
-                divOrder.innerHTML +=`Not enough capacity in truck!<br>Capacity: ${inputCapacity.value}kg<br> Items Weight: ${sumWeight}kg`;
+                divOrder.innerHTML +=`<p>Not enough capacity in truck!<br>Capacity: ${inputCapacity.value}kg<br> Items Weight: ${sumWeight}kg</p>`;
             }else{
                 return getItem("JSON/prices.json");
             }
@@ -60,20 +60,74 @@ function submitForm1(e){
         })
         // prices
         .then(data => {
-            data.forEach(e =>{
-                noStock.forEach(i =>{
-                    if(e.id === i.id){
+            if(data !== undefined){
+                data.forEach(e =>{
+                    if(noStock.includes(e.id)){
                         sumPrice += e.price;
                     }
-                })
-            })
-            console.log(sumPrice);
+                });
+                divOrder.innerHTML += `<p>Total sum of products is: ${sumPrice}RSD</p>`;
+            }
+
         })
         .catch((err)=>{
             console.log(err);
         })
-
-
 }
 
 formOrder.addEventListener('submit', submitForm1);
+
+// 2.
+let divSearch = document.querySelector("#search");
+let formSearch = document.querySelector("#search form");
+let itemName = document.querySelector("#item");
+let minPrice = document.querySelector("#min");
+let maxPrice = document.querySelector("#max");
+let ispis = document.querySelector("#ispis");
+
+
+
+async function checkItems(){
+    let data1 = await getItem("JSON/stock.json");
+    let data2 = await getItem("JSON/prices.json");
+    let itemsOnStock = [];
+    let table = document.createElement("table");
+
+    data1.forEach(e =>{
+        if(e.stock>0){
+            itemsOnStock.push(e.id);
+        }
+    });
+
+    data2.forEach(e =>{
+       if(itemsOnStock.includes(e.id) && e.item.includes(itemName.value) && e.price >= minPrice.value && e.price <= maxPrice.value){
+            let tr = document.createElement("tr");
+            let td1 = document.createElement("td");
+            let td2 = document.createElement("td");
+            td1.innerHTML = e.item;
+            td2.innerHTML = e.price;
+
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            table.appendChild(tr);
+       }
+    })
+
+    return table;
+}
+
+function print(e){
+    e.preventDefault();
+
+    checkItems()
+    .then(data =>{
+        ispis.appendChild(data);
+    })
+    .catch(err =>{
+        console.log(err);
+    })
+}
+
+formSearch.addEventListener("submit", print);
+
+
