@@ -9,9 +9,10 @@ section{
     justify-content: space-evenly;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(90, 110, 224);
+    background-color: rgb(221, 190, 49);
     width: 400px;
     margin: 40px auto;
+    padding: 20px;
 }
 
 section #ispis1{
@@ -37,7 +38,7 @@ section div form{
 section div form label{
     font-size: 1.4rem;
     font-weight: 600;
-    color: rgb(235, 221, 17) ;
+    color: rgb(47, 66, 170) ;
 }
 
 section div form input{
@@ -48,14 +49,14 @@ section div form input{
 
 section div form input[type ="submit"]{
     width: 50%;
-    background-color: rgb(241, 199, 62);
+    background-color: rgb(62, 81, 190);
     border-style: none;
-    color: rgb(56, 54, 54);
+    color: rgb(240, 232, 232);
     margin: 10px 0px;
 }
 
 section div form input[type ="submit"]:hover{
-    background-color:rgb(214, 208, 152);
+    background-color:rgb(92, 115, 216);
     transition: 0.5s ease;
     cursor: pointer;
 }
@@ -65,6 +66,10 @@ section table{
     color: whitesmoke;
     margin:auto;
     width: 100%;
+}
+
+section td{
+    width: 50%;
 }
 
 section table td{
