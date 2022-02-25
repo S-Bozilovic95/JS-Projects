@@ -53,7 +53,7 @@ function submitForm1(e){
             });
 
             if(inputCapacity.value < sumWeight){
-                divOrder.innerHTML +=`<p>Not enough capacity in truck!<br>Capacity: ${inputCapacity.value}kg<br> Items Weight: ${sumWeight}kg</p>`;
+                ispis1.innerHTML =`<p>Not enough capacity in truck!<br>Capacity: ${inputCapacity.value}kg<br> Items Weight: ${sumWeight}kg</p>`;
             }else{
                 return getItem("JSON/prices.json");
             }
@@ -63,9 +63,16 @@ function submitForm1(e){
         .then(data => {
             if(data !== undefined){
 
+                ispis1.innerHTML ="";
                 data.forEach(e =>{
                     if(noStock.includes(e.id)){
                         sumPrice += e.price;
+                        ispis1.innerHTML += `<table>
+                                                <tr>
+                                                    <td>${e.item}</td>
+                                                    <td>${e.price}</td>
+                                                </tr>
+                                            </table>`
                     }
                 });
                 ispis1.innerHTML+= `<p> Total price of items that are not on stock is: ${sumPrice} RSD</p>`;

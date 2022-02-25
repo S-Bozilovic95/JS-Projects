@@ -24,6 +24,7 @@ section p{
     font-size: 1.5rem;
     text-align: center;
     color: whitesmoke;
+    padding: 10px;
 }
 
 section div form{
