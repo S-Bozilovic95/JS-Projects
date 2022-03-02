@@ -61,7 +61,7 @@ header{
 section{
     background-color: $lightDark; 
     border-radius: 5px;
-    @include flex(space-between,flex-start ,row ,wrap);
+    @include flex(space-around,center ,row ,wrap);
 
     @media(max-width:768px) {
         padding: 0px;
@@ -71,7 +71,7 @@ section{
     #buttons{
         flex: 0 0 30%;
         margin: 20px 0px;
-        @include flex(space-between,flex-start ,column ,wrap);
+        @include flex(center,flex-start ,column ,wrap);
         
         @media(max-width:768px) {
             flex: 0 0 100%;
@@ -124,9 +124,9 @@ section{
     #screen{
         background-color: $lightgray;
         border-radius: 5px;
-        flex: 0 0 70%;
+        flex: 0 0 50%;
         height: 70vh;
-        padding: 20px;
+        padding: 5px;
         margin: 10px 0px;
 
         @media(max-width:768px) {
@@ -138,37 +138,64 @@ section{
 
     // input/update section
     #inputs{
-        @include flex(flex-start,center ,row-reverse ,wrap);
+        @include flex(center,center ,row-reverse ,wrap);
         width: 100%;
         background-color: $dark;
 
+        #formMessage{
+            flex: 0 0 40%;
+
+            @media(max-width:768px) {
+                flex: 0 0 100%;
+            }
+        }
+
+        #formUsername{
+            flex: 0 0 40%;
+
+            @media(max-width:768px) {
+                flex: 0 0 100%;
+            }
+        }
         
         form{
             margin:5px 20px;
+            padding-top: 25px;
+
+            @media(max-width:768px) {
+                margin:5px auto;
+                text-align: center;
+            }
 
             input{
-                padding: 10px;
                 border-radius: 25px;
                 border: none;
+               
 
                 &:focus{
                     outline: none;
                 }
 
                 @media(max-width:768px) {
-                    padding: 5px;
                     justify-content: center;
                 }
             }
 
+            #inputMessage{
+                padding: 15px;
+                width: 70%;
+            }
+
+            #inputUsername{
+                padding: 15px;
+                width: 70%;
+            }
+
             #btnSend{
+                padding: 10px;
                 border-radius: 5px;
                 font-size: 1.2rem;
                 background-color: $yellow;
-
-                @media(max-width:768px) {
-                    font-size: 0.9rem;
-                }
 
                 &:hover{
                     background-color: $lightYellow;
@@ -178,13 +205,10 @@ section{
             }
 
             #btnUpdate{
+                padding: 10px;
                 border-radius: 5px;
                 font-size: 1.2rem;
                 background-color: $yellow;
-
-                @media(max-width:768px) {
-                    font-size: 0.9rem;
-                }
 
                 &:hover{
                     background-color: $lightYellow;
