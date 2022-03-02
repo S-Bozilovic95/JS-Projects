@@ -21,7 +21,6 @@ let buttons = document.querySelectorAll("#buttons button")
 //             })
 //             icon.classList.add("of");
 //            }
-        
 //         })
 
 //     }else{
@@ -30,3 +29,5 @@ let buttons = document.querySelectorAll("#buttons button")
 //         })
 //     }
 // })
+
+console.log(db);

@@ -53,6 +53,33 @@
 
 
 
-    <script src="main.js"></script>
+
+
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
+
+
+<script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyAQTScadwbPa42GnrclxFRjv79YEkw8H3Q",
+      authDomain: "chat-roombs.firebaseapp.com",
+      projectId: "chat-roombs",
+      storageBucket: "chat-roombs.appspot.com",
+      messagingSenderId: "928806627297",
+      appId: "1:928806627297:web:641b8f08bc7339f35e14a0",
+      measurementId: "G-ZBDY7GSNY6"
+    };
+  
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    let db = firebase.firestore();
+</script>
+
+
+<script type="module" src="main.js"></script>
+
 </body>
 </html>
