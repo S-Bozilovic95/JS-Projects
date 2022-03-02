@@ -1,0 +1,199 @@
+// variables
+$dark:#353631;
+$lightDark:#51524c;
+$white:white;
+$yellow:#fec107;
+$lightYellow:#e7be44af;
+$gray: rgb(177, 170, 170);
+$lightgray: #f8f8f8;
+$transition: .6s ease;
+
+// mixins
+@mixin flex($justify, $align, $direction, $wrap){
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+}
+
+
+// default styles
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+    background: $dark;
+    font-family: 'Montserrat', sans-serif;
+}
+
+// header section
+header{
+    padding: 10px;
+
+    h1{
+        color: white;
+        font-size: 3rem;
+
+        @media(max-width:768px) {
+            font-size: 2rem;
+        }
+    }
+
+    h3{
+        font-size: 2rem;
+        color: $yellow;
+    
+        @media(max-width:768px) {
+            font-size: 1.5rem;
+            padding: 5px;
+            width: 100%;
+        }
+    }
+}
+
+
+// rooms section
+section{
+    background-color: $lightDark; 
+    border-radius: 5px;
+    @include flex(space-between,flex-start ,row ,wrap);
+
+    @media(max-width:768px) {
+        padding: 0px;
+    }
+
+    
+    #buttons{
+        flex: 0 0 30%;
+        margin: 20px 0px;
+        @include flex(space-between,flex-start ,column ,wrap);
+        
+        @media(max-width:768px) {
+            flex: 0 0 100%;
+            margin: 0;
+        }
+
+        // i{
+        //     font-size: 2rem;
+        //     padding: 10px;
+        //     display: none;
+
+        //     @media(max-width:768px) {
+        //         display: block;
+        //     }
+        // }
+
+
+        button{
+            padding: 15px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: $white;
+            width: 100%;
+            border-radius: 5px;
+
+            &:hover,
+            &:focus{
+                background-color: $dark;
+                color: $yellow;
+                transition: $transition;
+                cursor: pointer;
+            }
+
+
+            @media(max-width:768px) {
+                font-size: 1rem;
+                padding: 5px;
+                // width: 25%;
+                text-align: center;
+                background-color: $yellow;
+                color: $dark;
+                border-radius: 0;
+                // display: none;
+            }
+        }
+    }
+
+    // screen section
+    #screen{
+        background-color: $lightgray;
+        border-radius: 5px;
+        flex: 0 0 70%;
+        height: 70vh;
+        padding: 20px;
+        margin: 10px 0px;
+
+        @media(max-width:768px) {
+            flex: 0 0 100%;
+            margin: 0;
+            height: 50vh;
+        }
+    }
+
+    // input/update section
+    #inputs{
+        @include flex(flex-start,center ,row-reverse ,wrap);
+        width: 100%;
+        background-color: $dark;
+
+        
+        form{
+            margin:5px 20px;
+
+            input{
+                padding: 10px;
+                border-radius: 25px;
+                border: none;
+
+                &:focus{
+                    outline: none;
+                }
+
+                @media(max-width:768px) {
+                    padding: 5px;
+                    justify-content: center;
+                }
+            }
+
+            #btnSend{
+                border-radius: 5px;
+                font-size: 1.2rem;
+                background-color: $yellow;
+
+                @media(max-width:768px) {
+                    font-size: 0.9rem;
+                }
+
+                &:hover{
+                    background-color: $lightYellow;
+                    cursor: pointer;
+                    transition: $transition;
+                }
+            }
+
+            #btnUpdate{
+                border-radius: 5px;
+                font-size: 1.2rem;
+                background-color: $yellow;
+
+                @media(max-width:768px) {
+                    font-size: 0.9rem;
+                }
+
+                &:hover{
+                    background-color: $lightYellow;
+                    cursor: pointer;
+                    transition: $transition;
+                }
+            }
+          
+        }
+    }
+}
+
