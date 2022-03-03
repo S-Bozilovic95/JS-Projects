@@ -1,4 +1,4 @@
-class chatroom{
+class Chatroom{
     constructor(r,u){
        this.room = r;
        this.userName = u;
@@ -9,6 +9,7 @@ class chatroom{
     //setters
     set room(r){
         let rm = r.trim();
+
         if(rm.length>0){
             this._room = rm;
         }else{
@@ -43,6 +44,14 @@ class chatroom{
 
     // metodi
 
+    // asinhroni metod se koristi zato sto vraca promis 
+    // nakon toga mozemo ga koristiti univerzalno i za bilo koju svrhu
+    // iz tog razloga than i catch granu pisemo kada pozivamo metod u main.js
+    // jer necemo svaki put hteti da ispisemo istu poruku za ovaj metod
+    // jos jedan razlog zasto je se koristi async je zato sto 
+    // mozemo da koristimo await odnosno da sacekamo odg od baze
+    // na taj nacin smo sigurni da necemo dobiti null ili undefined
+    
     async addChat(msg) {
         let now = new Date();
 
@@ -53,19 +62,36 @@ class chatroom{
             created_at: firebase.firestore.Timestamp.fromDate(now)
         }
 
+       let response = await this.chats.add(newDoc);
+       return response;
+    }
 
-        db.collection("chats")
-        .doc()
-        .set(newDoc)
-        .then(()=>{
-            console.log(`Succesfully added chat`);
+
+
+    getChats(func) {
+
+        this.chats
+        .where("room","==",this.room)
+        .orderBy("created_at")
+        .onSnapshot(snapshot =>{
+            
+         snapshot.docChanges().forEach(change => {
+                if(change.type === "added"){
+                    func(change.doc.data());
+                }
+
+            });
         })
-        .catch(err =>{
-            console.log(`Could not add chat: ${err}`);
-        })
+    }
+
+    updateUsername(newName){
+        this.userName = newName;  
+    }
+
+    updateRoom(newRoom){
+        this.room = newRoom;  
     }
 
 }
 
-
-export default chatroom;
+export default Chatroom;

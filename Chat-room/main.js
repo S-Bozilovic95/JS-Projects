@@ -1,15 +1,35 @@
-import chatroom from "./chat.js"
+import Chatroom from "./chat.js"
+import ChatUI from "./ui.js"
 
-let chatroom1 = new chatroom("js","Svetozar2");
-let chatroom2 = new chatroom("general","Maja");
+let ul = document.querySelector("ul");
+let formSend = document.querySelector("#formMessage");
 
-console.log(chatroom1);
+let chatroom = new Chatroom("js","Svetozar2");
+let chatUI = new ChatUI(ul);
 
 
-chatroom1.addChat("Operi kola")
-.then(()=>{
-        console.log(`Succesfully added chat`);
-    })
-.catch(err =>{
-        console.log(`Could not add chat: ${err}`);
-    })
+formSend.addEventListener("submit",e =>{
+    e.preventDefault();
+
+    let message = document.querySelector("#inputMessage");
+    
+    if(message.value.trim() != 0){
+        chatroom.addChat(message.value);
+        message.value = "";
+    }else{
+        alert("Can't send empty message!")
+    }
+    
+})
+
+
+chatroom.getChats( e =>{
+    chatUI.templateLI(e);
+})
+
+
+
+
+
+
+

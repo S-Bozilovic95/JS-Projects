@@ -75,7 +75,8 @@ section {
     flex: 0 0 50%;
     height: 70vh;
     padding: 5px;
-    margin: 10px 0px; }
+    margin: 10px 0px;
+    overflow-y: scroll; }
     @media (max-width: 768px) {
       section #screen {
         flex: 0 0 100%;

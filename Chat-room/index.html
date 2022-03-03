@@ -14,72 +14,72 @@
     
 </head>
 <body>
+        
+    <!-- header section -->
+    <header>
+    <h1>ChatBox</h1>
+    <h3>Rooms</h3>
+    </header>
+
+    <!-- rooms section -->
+    <section>
+        <div id="buttons">
+            <!-- <i class="fas fa-bars of" id="dropBtn"></i> -->
+            <button id="general">#general</button>
+            <button id="homework">#homework</button>
+            <button id="js">#js</button>
+            <button id="test">#test</button>
+        </div>
+
+        <!-- screen section -->
+        <div id="screen"><ul></ul></div>
+
+        <div id="inputs">
+            <!-- input messages -->
+            <form action="" id="formMessage">
+                <input type="text" placeholder="New message" id="inputMessage">
+                <input type="submit" value="send" id="btnSend">
+            </form>
+
+            <!-- update username -->
+            <form action="" id="formUsername">
+                <input type="text" placeholder="Update username" id="inputUsername">
+                <input type="submit" value="update" id="btnUpdate">
+            </form>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
+
+
+    <script>
+        const firebaseConfig = {
+        apiKey: "AIzaSyAQTScadwbPa42GnrclxFRjv79YEkw8H3Q",
+        authDomain: "chat-roombs.firebaseapp.com",
+        projectId: "chat-roombs",
+        storageBucket: "chat-roombs.appspot.com",
+        messagingSenderId: "928806627297",
+        appId: "1:928806627297:web:641b8f08bc7339f35e14a0",
+        measurementId: "G-ZBDY7GSNY6"
+        };
     
-<!-- header section -->
-<header>
-<h1>ChatBox</h1>
-<h3>Rooms</h3>
-</header>
-
-<!-- rooms section -->
-<section>
-    <div id="buttons">
-        <!-- <i class="fas fa-bars of" id="dropBtn"></i> -->
-        <button id="general">#general</button>
-        <button id="homework">#homework</button>
-        <button id="js">#js</button>
-        <button id="test">#test</button>
-    </div>
-
-    <!-- screen section -->
-    <div id="screen"><ul></ul></div>
-
-    <div id="inputs">
-        <!-- input messages -->
-        <form action="" id="formMessage">
-            <input type="text" placeholder="New message" id="inputMessage">
-            <input type="submit" value="send" id="btnSend">
-        </form>
-
-        <!-- update username -->
-        <form action="" id="formUsername">
-            <input type="text" placeholder="Update username" id="inputUsername">
-            <input type="submit" value="update" id="btnUpdate">
-        </form>
-    </div>
-</section>
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        let db = firebase.firestore();
+    </script>
 
 
-
-
-
-
-
-
-
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
-
-
-<script>
-    const firebaseConfig = {
-      apiKey: "AIzaSyAQTScadwbPa42GnrclxFRjv79YEkw8H3Q",
-      authDomain: "chat-roombs.firebaseapp.com",
-      projectId: "chat-roombs",
-      storageBucket: "chat-roombs.appspot.com",
-      messagingSenderId: "928806627297",
-      appId: "1:928806627297:web:641b8f08bc7339f35e14a0",
-      measurementId: "G-ZBDY7GSNY6"
-    };
-  
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    let db = firebase.firestore();
-</script>
-
-
-<script type="module" src="main.js"></script>
+    <script type="module" src="main.js"></script>
 
 </body>
 </html>
