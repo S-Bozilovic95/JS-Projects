@@ -39,6 +39,32 @@ class chatroom{
         return this._userName;
     }
 
+
+
+    // metodi
+
+    async addChat(msg) {
+        let now = new Date();
+
+        let newDoc = {
+            message: msg,
+            username: this.userName,
+            room: this.room,
+            created_at: firebase.firestore.Timestamp.fromDate(now)
+        }
+
+
+        db.collection("chats")
+        .doc()
+        .set(newDoc)
+        .then(()=>{
+            console.log(`Succesfully added chat`);
+        })
+        .catch(err =>{
+            console.log(`Could not add chat: ${err}`);
+        })
+    }
+
 }
 
 
