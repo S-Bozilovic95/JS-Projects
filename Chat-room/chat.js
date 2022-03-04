@@ -23,10 +23,8 @@ class Chatroom{
         if(un.length<=10 && un.length>=2){
             this._userName = un;
 
-        }else if(un.length === 0){
-            alert("Username not valid!");
         }else{
-            this._userName ="#User"
+            alert("Username not valid!");
         }
     }
 
@@ -85,8 +83,14 @@ class Chatroom{
     }
 
     updateUsername(newName){
-        this.userName = newName;  
+        if(newName.length<=10 && newName.length>=2){
+            this.userName = newName;
+
+        }else{
+            alert("Username not valid!");
+        }
     }
+
 
     updateRoom(newRoom){
         this.room = newRoom;  
