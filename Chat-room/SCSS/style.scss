@@ -138,10 +138,12 @@ section{
         }
 
 
-        ul{    
-            .me{
-                color: red;
-            }        
+        ul{   
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            
+                    
 
             li{
                 display: flex;
@@ -152,26 +154,49 @@ section{
                 padding: 10px;
                 margin: 20px;
                 border-radius:0px 10px 10px 10px ;
-                width: 70%;
-                
-                p{
-                    font-size: 1.2rem;
-                    padding:10px;
-                }
+                width: 55%;
 
+                .message{
+                    font-size: 1.1rem;
+                    margin: 5px 0px;
+                }
 
                 .name{
                     font-weight: 500;
-                    font-size: 1.3rem;
+                    font-size: 1.4rem;
                     color: $lightgray;
                 }
 
                 .date{
                     font-size: 0.9rem;
+                    align-self: flex-end;
+                }
+            }
+            
+            .me{
+                align-self: flex-end;
+                border-radius:10px 0px 10px 10px ;
+                background-color: $lightYellow;
+                color: $dark;
+                
+                .message{
+                    align-self: flex-end;
+                }
+
+                .name{
+                    color: $dark;
+                    align-self: flex-end;
+                }
+
+                .date{
+                    align-self: flex-start;
+                    margin-top: 10px;
                 }
             }
         }
     }
+
+    
 
     // input/update section
     #inputs{
@@ -183,7 +208,7 @@ section{
             flex: 0 0 40%;
 
             @media(max-width:768px) {
-                flex: 0 0 100%;
+                flex: 0 0 80%;
             }
         }
 
@@ -191,12 +216,13 @@ section{
             flex: 0 0 40%;
 
             @media(max-width:768px) {
-                flex: 0 0 100%;
+                flex: 0 0 80%;
             }
         }
         
         form{
-            margin:5px 20px;
+            @include flex(space-around, center ,row ,wrap );
+            margin:5px;
             padding-top: 25px;
 
             @media(max-width:768px) {
@@ -205,21 +231,22 @@ section{
             }
 
             input{
-                border-radius: 25px;
+                border-radius: 5px;
                 border: none;
-               
+                outline: none; 
+                font-size: 1.2rem;
+            }
 
-                &:focus{
-                    outline: none;
-                }
-
-                @media(max-width:768px) {
-                    justify-content: center;
-                }
+            textarea{
+                outline: none;
+                border-radius: 5px;
+                font-size: 1.2rem;
+                padding: 5px;
+                width: 70%;
+                
             }
 
             #inputMessage{
-                padding: 15px;
                 width: 70%;
             }
 

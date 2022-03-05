@@ -89,10 +89,6 @@ chatroom.getChats( data =>{
 
 
 
-
-
-
-
 // check local storage
 function checkLocal (key, dflt){
     if(key){

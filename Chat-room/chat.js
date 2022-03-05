@@ -3,6 +3,7 @@ class Chatroom{
        this.room = r;
        this.userName = u;
        this.chats = db.collection("chats");
+       this.unsub = false;
     }
 
 
@@ -68,7 +69,7 @@ class Chatroom{
 
     getChats(func) {
 
-        this.chats
+        this.unsub = this.chats
         .where("room","==",this.room)
         .orderBy("created_at")
         .onSnapshot(snapshot =>{
@@ -93,12 +94,10 @@ class Chatroom{
 
 
     updateRoom(newRoom){
-        this.room = newRoom;  
-    }
-
-
-    sideMessage(func){
-      
+        this.room = newRoom; 
+        if(this.unsub != false){
+            this.unsub();
+        } 
     }
 
 }

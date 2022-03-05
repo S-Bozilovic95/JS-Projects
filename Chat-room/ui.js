@@ -16,7 +16,7 @@ class ChatUI{
     
     // metodi
     templateLI(doc){
-        this.lista.innerHTML += `<li class="${doc.username}"><span class ="name">${doc.username}:</span> <p>${doc.message}</p> <span class ="date">${this.formatTime(doc.created_at.toDate())}</span></li>`;
+        this.lista.innerHTML += `<li class="${doc.username}"><span class ="name">${doc.username}</span> <span class ="message">${doc.message}</span> <span class ="date">${this.formatTime(doc.created_at.toDate())}</span></li>`;
     }
 
 
@@ -40,6 +40,7 @@ class ChatUI{
         return fTime;
     }
     
+
     reorderMessages(doc){
         let li = document.querySelectorAll("li")
         

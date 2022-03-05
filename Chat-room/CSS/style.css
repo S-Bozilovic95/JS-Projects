@@ -82,27 +82,43 @@ section {
         flex: 0 0 100%;
         margin: 0;
         height: 50vh; } }
-    section #screen ul .me {
-      color: red; }
-    section #screen ul li {
+    section #screen ul {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      background-color: #51524caf;
-      color: #f8f8f8;
-      padding: 10px;
-      margin: 20px;
-      border-radius: 0px 10px 10px 10px;
-      width: 70%; }
-      section #screen ul li p {
-        font-size: 1.2rem;
-        padding: 10px; }
-      section #screen ul li .name {
-        font-weight: 500;
-        font-size: 1.3rem;
-        color: #f8f8f8; }
-      section #screen ul li .date {
-        font-size: 0.9rem; }
+      align-items: flex-start; }
+      section #screen ul li {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: #51524caf;
+        color: #f8f8f8;
+        padding: 10px;
+        margin: 20px;
+        border-radius: 0px 10px 10px 10px;
+        width: 55%; }
+        section #screen ul li .message {
+          font-size: 1.1rem;
+          margin: 5px 0px; }
+        section #screen ul li .name {
+          font-weight: 500;
+          font-size: 1.4rem;
+          color: #f8f8f8; }
+        section #screen ul li .date {
+          font-size: 0.9rem;
+          align-self: flex-end; }
+      section #screen ul .me {
+        align-self: flex-end;
+        border-radius: 10px 0px 10px 10px;
+        background-color: #e7be44af;
+        color: #353631; }
+        section #screen ul .me .message {
+          align-self: flex-end; }
+        section #screen ul .me .name {
+          color: #353631;
+          align-self: flex-end; }
+        section #screen ul .me .date {
+          align-self: flex-start;
+          margin-top: 10px; }
   section #inputs {
     display: flex;
     justify-content: center;
@@ -115,29 +131,36 @@ section {
       flex: 0 0 40%; }
       @media (max-width: 768px) {
         section #inputs #formMessage {
-          flex: 0 0 100%; } }
+          flex: 0 0 80%; } }
     section #inputs #formUsername {
       flex: 0 0 40%; }
       @media (max-width: 768px) {
         section #inputs #formUsername {
-          flex: 0 0 100%; } }
+          flex: 0 0 80%; } }
     section #inputs form {
-      margin: 5px 20px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin: 5px;
       padding-top: 25px; }
       @media (max-width: 768px) {
         section #inputs form {
           margin: 5px auto;
           text-align: center; } }
       section #inputs form input {
-        border-radius: 25px;
-        border: none; }
-        section #inputs form input:focus {
-          outline: none; }
-        @media (max-width: 768px) {
-          section #inputs form input {
-            justify-content: center; } }
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        font-size: 1.2rem; }
+      section #inputs form textarea {
+        outline: none;
+        border-radius: 5px;
+        font-size: 1.2rem;
+        padding: 5px;
+        width: 70%; }
       section #inputs form #inputMessage {
-        padding: 15px;
         width: 70%; }
       section #inputs form #inputUsername {
         padding: 15px;
