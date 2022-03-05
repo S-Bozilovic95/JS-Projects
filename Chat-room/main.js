@@ -40,6 +40,7 @@ formUsername.addEventListener("submit",e =>{
         chatroom.updateUsername(newName.value);
         p.innerHTML = `Succesfully updated username: ${newName.value}`;
         localStorage.setItem("username",newName.value);
+        chatUI.reorderMessages(checkLocal(localStorage.username,"anonymus"));
 
         if(report === null){
             report = setInterval(()=>{
@@ -73,6 +74,7 @@ buttons.addEventListener("click",e=>{
 
         chatroom.getChats( data =>{
             chatUI.templateLI(data);
+            chatUI.reorderMessages(checkLocal(localStorage.username,"anonymus"));
         })
     }
 })
@@ -81,6 +83,7 @@ buttons.addEventListener("click",e=>{
 // ispis poruka
 chatroom.getChats( data =>{
     chatUI.templateLI(data);
+    chatUI.reorderMessages(checkLocal(localStorage.username,"anonymus"));
 })
 
 

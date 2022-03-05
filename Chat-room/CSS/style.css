@@ -82,9 +82,12 @@ section {
         flex: 0 0 100%;
         margin: 0;
         height: 50vh; } }
+    section #screen ul .me {
+      color: red; }
     section #screen ul li {
       display: flex;
       flex-direction: column;
+      align-items: flex-start;
       background-color: #51524caf;
       color: #f8f8f8;
       padding: 10px;

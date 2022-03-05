@@ -96,6 +96,11 @@ class Chatroom{
         this.room = newRoom;  
     }
 
+
+    sideMessage(func){
+      
+    }
+
 }
 
 export default Chatroom;
