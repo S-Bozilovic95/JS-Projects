@@ -82,6 +82,24 @@ section {
         flex: 0 0 100%;
         margin: 0;
         height: 50vh; } }
+    section #screen ul li {
+      display: flex;
+      flex-direction: column;
+      background-color: #51524caf;
+      color: #f8f8f8;
+      padding: 10px;
+      margin: 20px;
+      border-radius: 0px 10px 10px 10px;
+      width: 70%; }
+      section #screen ul li p {
+        font-size: 1.2rem;
+        padding: 10px; }
+      section #screen ul li .name {
+        font-weight: 500;
+        font-size: 1.3rem;
+        color: #f8f8f8; }
+      section #screen ul li .date {
+        font-size: 0.9rem; }
   section #inputs {
     display: flex;
     justify-content: center;

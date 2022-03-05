@@ -16,7 +16,7 @@ class ChatUI{
     
     // metodi
     templateLI(doc){
-        this.lista.innerHTML += `<li>${doc.username} : ${doc.message} ${this.formatTime(doc.created_at.toDate())}</li>`;
+        this.lista.innerHTML += `<li><span class ="name">${doc.username}:</span> <p>${doc.message}</p> <span class ="date">${this.formatTime(doc.created_at.toDate())}</span></li>`;
     }
 
 

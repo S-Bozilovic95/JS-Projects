@@ -1,6 +1,7 @@
 // variables
 $dark:#353631;
 $lightDark:#51524c;
+$lightDarkTransparent:#51524caf;
 $white:white;
 $yellow:#fec107;
 $lightYellow:#e7be44af;
@@ -134,6 +135,35 @@ section{
             flex: 0 0 100%;
             margin: 0;
             height: 50vh;
+        }
+
+        ul{
+            li{
+                display: flex;
+                flex-direction: column;
+                background-color: $lightDarkTransparent;
+                color: $lightgray;
+                padding: 10px;
+                margin: 20px;
+                border-radius:0px 10px 10px 10px ;
+                width: 70%;
+                
+                p{
+                    font-size: 1.2rem;
+                    padding:10px;
+                }
+
+
+                .name{
+                    font-weight: 500;
+                    font-size: 1.3rem;
+                    color: $lightgray;
+                }
+
+                .date{
+                    font-size: 0.9rem;
+                }
+            }
         }
     }
 
