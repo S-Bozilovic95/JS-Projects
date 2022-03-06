@@ -112,6 +112,27 @@ class Chatroom{
         })
     }
 
+
+    sortMessage(date1,date2,func){
+        date1 = firebase.firestore.Timestamp.fromDate(new Date(date1));
+        date2 = firebase.firestore.Timestamp.fromDate(new Date(date2));
+
+        this.chats
+        .where("room","==",this.room)
+        .where("created_at",">",date1)
+        .where("created_at","<",date2)
+        .orderBy("created_at")
+        .onSnapshot(snapshot =>{
+            
+         snapshot.docChanges().forEach(change => {
+                if(change.type === "added"){
+                    func(change.doc);
+                }
+
+            });
+        })
+    }
+
 }
 
 export default Chatroom;

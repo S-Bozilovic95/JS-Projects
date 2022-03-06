@@ -12,6 +12,9 @@ let buttons = document.querySelector("#buttons");
 let colorForm = document.querySelector("#colorForm");
 let screen = document.querySelector("#screen");
 let colorPick = document.querySelector("#pickColor");
+let formDates = document.querySelector("#formDates");
+let startDate = document.querySelector("#startDate");
+let endDate = document.querySelector("#endDate");
 
 // klase
 let chatroom = new Chatroom(checkLocal(localStorage.room,"general"),checkLocal(localStorage.username,"anonymus"));
@@ -142,6 +145,23 @@ colorForm.addEventListener("submit",e =>{
     e.preventDefault();
     screen.style.backgroundColor = colorPick.value;
     localStorage.setItem("color",colorPick.value);
+})
+
+
+// sortiranje datuma
+formDates.addEventListener("submit",e=>{
+    e.preventDefault();
+    ul.innerHTML = "";
+
+    if(startDate.value.length === 0 || endDate.value.length === 0){
+        alert("Invalid date insert!");
+    }else{
+        chatroom.sortMessage(startDate.value,endDate.value,data =>{
+            chatUI.templateLI(data);
+            chatUI.reorderMessages(checkLocal(localStorage.username,"anonymus"));
+        });
+    }
+
 })
 
 
