@@ -36,19 +36,19 @@ section {
   @media (max-width: 768px) {
     section {
       padding: 0px; } }
-  section #buttons {
-    flex: 0 0 30%;
-    margin: 20px 0px;
+  section #options {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: flex-start;
     flex-direction: column;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    flex: 0 0 30%;
+    margin: 20px 0px; }
     @media (max-width: 768px) {
-      section #buttons {
+      section #options #buttons {
         flex: 0 0 100%;
         margin: 0; } }
-    section #buttons button {
+    section #options #buttons button {
       padding: 15px;
       background: none;
       border: none;
@@ -56,13 +56,13 @@ section {
       color: white;
       width: 100%;
       border-radius: 5px; }
-      section #buttons button:hover, section #buttons button:focus {
+      section #options #buttons button:hover, section #options #buttons button:focus {
         background-color: #353631;
         color: #fec107;
         transition: 0.6s ease;
         cursor: pointer; }
       @media (max-width: 768px) {
-        section #buttons button {
+        section #options #buttons button {
           font-size: 1rem;
           padding: 5px;
           text-align: center;
@@ -96,16 +96,34 @@ section {
         margin: 20px;
         border-radius: 0px 10px 10px 10px;
         width: 55%; }
+        @media (max-width: 768px) {
+          section #screen ul li {
+            width: 80%;
+            margin: 5px; } }
+        section #screen ul li i {
+          font-size: 1rem; }
+          section #screen ul li i:hover {
+            cursor: pointer;
+            color: #353631; }
         section #screen ul li .message {
           font-size: 1.1rem;
-          margin: 5px 0px; }
+          margin: 10px 0px; }
         section #screen ul li .name {
           font-weight: 500;
           font-size: 1.4rem;
           color: #f8f8f8; }
+          @media (max-width: 768px) {
+            section #screen ul li .name {
+              font-size: 1.2rem; } }
         section #screen ul li .date {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-direction: row;
+          flex-wrap: nowrap;
           font-size: 0.9rem;
-          align-self: flex-end; }
+          align-self: flex-end;
+          width: 100%; }
       section #screen ul .me {
         align-self: flex-end;
         border-radius: 10px 0px 10px 10px;
@@ -117,8 +135,14 @@ section {
           color: #353631;
           align-self: flex-end; }
         section #screen ul .me .date {
-          align-self: flex-start;
-          margin-top: 10px; }
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          align-self: flex-start; }
+        section #screen ul .me i:hover {
+          color: white; }
   section #inputs {
     display: flex;
     justify-content: center;
@@ -131,12 +155,12 @@ section {
       flex: 0 0 40%; }
       @media (max-width: 768px) {
         section #inputs #formMessage {
-          flex: 0 0 80%; } }
+          flex: 0 0 100%; } }
     section #inputs #formUsername {
       flex: 0 0 40%; }
       @media (max-width: 768px) {
         section #inputs #formUsername {
-          flex: 0 0 80%; } }
+          flex: 0 0 100%; } }
     section #inputs form {
       display: flex;
       justify-content: space-around;
@@ -169,7 +193,8 @@ section {
         padding: 10px;
         border-radius: 5px;
         font-size: 1.2rem;
-        background-color: #fec107; }
+        background-color: #fec107;
+        margin-left: 15px; }
         section #inputs form #btnSend:hover {
           background-color: #e7be44af;
           cursor: pointer;

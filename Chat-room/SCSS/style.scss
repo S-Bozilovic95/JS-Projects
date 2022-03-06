@@ -69,26 +69,17 @@ section{
     }
 
     
-    #buttons{
+    #options{
+        @include flex(flex-end,flex-start ,column ,wrap );
         flex: 0 0 30%;
         margin: 20px 0px;
-        @include flex(center,flex-start ,column ,wrap);
-        
+
+
+        #buttons{
         @media(max-width:768px) {
             flex: 0 0 100%;
             margin: 0;
         }
-
-        // i{
-        //     font-size: 2rem;
-        //     padding: 10px;
-        //     display: none;
-
-        //     @media(max-width:768px) {
-        //         display: block;
-        //     }
-        // }
-
 
         button{
             padding: 15px;
@@ -119,6 +110,8 @@ section{
                 // display: none;
             }
         }
+
+    }
     }
 
     // screen section
@@ -156,20 +149,40 @@ section{
                 border-radius:0px 10px 10px 10px ;
                 width: 55%;
 
+                @media(max-width:768px) {
+                    width: 80%;
+                    margin: 5px;
+                }
+
+                i{
+                    font-size: 1rem;
+                    
+                    &:hover{
+                        cursor: pointer;
+                        color: $dark;
+                    }
+                }
+
                 .message{
                     font-size: 1.1rem;
-                    margin: 5px 0px;
+                    margin: 10px 0px;
                 }
 
                 .name{
                     font-weight: 500;
                     font-size: 1.4rem;
                     color: $lightgray;
+
+                    @media(max-width:768px) {
+                        font-size: 1.2rem;
+                    }
                 }
 
                 .date{
+                    @include flex(space-between,center ,row ,nowrap );
                     font-size: 0.9rem;
                     align-self: flex-end;
+                    width: 100%;
                 }
             }
             
@@ -189,8 +202,14 @@ section{
                 }
 
                 .date{
+                    @include flex(space-between,center ,row ,nowrap );
                     align-self: flex-start;
-                    margin-top: 10px;
+                }
+
+                i{
+                    &:hover{
+                        color: $white
+                    }
                 }
             }
         }
@@ -208,7 +227,7 @@ section{
             flex: 0 0 40%;
 
             @media(max-width:768px) {
-                flex: 0 0 80%;
+                flex: 0 0 100%;
             }
         }
 
@@ -216,7 +235,7 @@ section{
             flex: 0 0 40%;
 
             @media(max-width:768px) {
-                flex: 0 0 80%;
+                flex: 0 0 100%;
             }
         }
         
@@ -260,6 +279,7 @@ section{
                 border-radius: 5px;
                 font-size: 1.2rem;
                 background-color: $yellow;
+                margin-left: 15px;
 
                 &:hover{
                     background-color: $lightYellow;

@@ -5,18 +5,26 @@ import ChatUI from "./ui.js"
 let ul = document.querySelector("ul");
 let formSend = document.querySelector("#formMessage");
 let formUsername = document.querySelector("#formUsername");
+let message = document.querySelector("#inputMessage");
+let newName = document.querySelector("#inputUsername");
+let p = document.querySelector("#screen p");
+let buttons = document.querySelector("#buttons");
+let colorForm = document.querySelector("#colorForm");
+let screen = document.querySelector("#screen");
+let colorPick = document.querySelector("#pickColor");
 
 // klase
 let chatroom = new Chatroom(checkLocal(localStorage.room,"general"),checkLocal(localStorage.username,"anonymus"));
 let chatUI = new ChatUI(ul);
+
+// color check
+setLocalColor();
 
 // funkcije
 
 // dodavanje poruke
 formSend.addEventListener("submit",e =>{
     e.preventDefault();
-
-    let message = document.querySelector("#inputMessage");
     
     if(message.value.trim() != 0){
         chatroom.addChat(message.value);
@@ -31,8 +39,6 @@ formSend.addEventListener("submit",e =>{
 formUsername.addEventListener("submit",e =>{
     e.preventDefault();
 
-    let newName = document.querySelector("#inputUsername");
-    let p = document.querySelector("#screen p");
     let report = null;
     let br = 0;
 
@@ -62,8 +68,6 @@ formUsername.addEventListener("submit",e =>{
 
 
 // odabir sobe
-let buttons = document.querySelector("#buttons");
-
 buttons.addEventListener("click",e=>{
     e.preventDefault();
 
@@ -86,6 +90,31 @@ chatroom.getChats( data =>{
     chatUI.reorderMessages(checkLocal(localStorage.username,"anonymus"));
 })
 
+// brisanje poruka
+
+// let li = document.querySelector("i");
+
+ul.addEventListener("click",e =>{
+    e.preventDefault();
+
+    if(e.target.tagName === "I"){
+        let li = e.target.parentElement.parentElement;
+        let id = li.id;
+
+        if(li.classList.contains("me")){
+            if(confirm("Are You sure You want to delete this message permanently?")){
+                chatroom.deleteMessage(id);
+                li.remove();
+            }
+
+        }else{
+            li.remove();
+        }
+    }
+})
+
+
+
 
 
 
@@ -97,6 +126,23 @@ function checkLocal (key, dflt){
         return dflt;
     }
 }
+
+function setLocalColor (){
+    if(localStorage.color){
+        return screen.style.backgroundColor = localStorage.getItem("color");
+    }else{
+        return screen.style.backgroundColor =" #ffffff";
+    }
+}
+
+
+// odabir boje
+
+colorForm.addEventListener("submit",e =>{
+    e.preventDefault();
+    screen.style.backgroundColor = colorPick.value;
+    localStorage.setItem("color",colorPick.value);
+})
 
 
 

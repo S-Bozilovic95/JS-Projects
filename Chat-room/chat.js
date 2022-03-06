@@ -76,7 +76,7 @@ class Chatroom{
             
          snapshot.docChanges().forEach(change => {
                 if(change.type === "added"){
-                    func(change.doc.data());
+                    func(change.doc);
                 }
 
             });
@@ -98,6 +98,18 @@ class Chatroom{
         if(this.unsub != false){
             this.unsub();
         } 
+    }
+
+    deleteMessage(id){
+        this.chats
+        .doc(id)
+        .delete()
+        .then(()=>{
+            alert("Succesfully deleted message!")
+        })
+        .catch(err =>{
+            console.log(err);
+        })
     }
 
 }
