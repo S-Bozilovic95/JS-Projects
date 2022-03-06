@@ -15,6 +15,7 @@ let colorPick = document.querySelector("#pickColor");
 let formDates = document.querySelector("#formDates");
 let startDate = document.querySelector("#startDate");
 let endDate = document.querySelector("#endDate");
+let allButtons = document.querySelectorAll("button");
 
 // klase
 let chatroom = new Chatroom(checkLocal(localStorage.room,"general"),checkLocal(localStorage.username,"anonymus"));
@@ -83,6 +84,11 @@ buttons.addEventListener("click",e=>{
             chatUI.templateLI(data);
             chatUI.reorderMessages(checkLocal(localStorage.username,"anonymus"));
         })
+
+        allButtons.forEach(btn=>{
+            btn.classList.remove("selected");
+        })
+        e.target.classList.add("selected");
     }
 })
 

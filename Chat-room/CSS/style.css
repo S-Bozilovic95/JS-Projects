@@ -30,7 +30,7 @@ section {
   border-radius: 5px;
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: row;
   flex-wrap: wrap; }
   @media (max-width: 768px) {
@@ -42,33 +42,107 @@ section {
     align-items: flex-start;
     flex-direction: column;
     flex-wrap: wrap;
-    flex: 0 0 30%;
-    margin: 20px 0px; }
+    flex: 0 0 40%;
+    margin: 20px 0px;
+    width: 100%; }
     @media (max-width: 768px) {
-      section #options #buttons {
-        flex: 0 0 100%;
-        margin: 0; } }
-    section #options #buttons button {
-      padding: 15px;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      color: white;
-      width: 100%;
-      border-radius: 5px; }
-      section #options #buttons button:hover, section #options #buttons button:focus {
+      section #options {
+        flex: 0 0 100%; } }
+    section #options #buttons {
+      width: 100%; }
+      section #options #buttons .selected {
         background-color: #353631;
-        color: #fec107;
-        transition: 0.6s ease;
-        cursor: pointer; }
-      @media (max-width: 768px) {
-        section #options #buttons button {
-          font-size: 1rem;
-          padding: 5px;
-          text-align: center;
-          background-color: #fec107;
-          color: #353631;
-          border-radius: 0; } }
+        color: #fec107; }
+      section #options #buttons button {
+        padding: 15px;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: white;
+        width: 100%;
+        border-radius: 5px; }
+        section #options #buttons button:hover {
+          background-color: #353631;
+          color: #fec107;
+          transition: 0.6s ease;
+          cursor: pointer; }
+        @media (max-width: 768px) {
+          section #options #buttons button {
+            font-size: 1rem;
+            padding: 5px;
+            text-align: center;
+            background-color: #fec107;
+            color: #353631;
+            border-radius: 0; } }
+    section #options #colorForm {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      flex-wrap: wrap;
+      width: 100%;
+      margin: 20px auto; }
+      section #options #colorForm label {
+        font-size: 1.3rem;
+        color: white;
+        padding: 10px; }
+      section #options #colorForm #pickColor {
+        width: 20%;
+        background-color: #353631;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        padding: 2px; }
+      section #options #colorForm #setColor {
+        margin: 5px;
+        width: 20%;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 1.2rem;
+        background-color: #fec107;
+        outline: none;
+        border: none; }
+        section #options #colorForm #setColor:hover {
+          background-color: #e7be44af;
+          cursor: pointer;
+          transition: 0.6s ease; }
+    section #options #formDates {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      flex-wrap: wrap;
+      width: 100%; }
+      section #options #formDates label {
+        font-size: 1.3rem;
+        color: white;
+        padding: 10px; }
+      section #options #formDates #startDate,
+      section #options #formDates #endDate {
+        padding: 10px;
+        font-size: 1.2rem;
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        margin: 5px auto; }
+        @media (max-width: 768px) {
+          section #options #formDates #startDate,
+          section #options #formDates #endDate {
+            font-size: 1rem;
+            padding: 5px; } }
+      section #options #formDates #setDate {
+        margin: 5px;
+        width: 20%;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 1.2rem;
+        background-color: #fec107;
+        outline: none;
+        border: none; }
+        section #options #formDates #setDate:hover {
+          background-color: #e7be44af;
+          cursor: pointer;
+          transition: 0.6s ease; }
   section #screen {
     background-color: #f8f8f8;
     border-radius: 5px;
@@ -76,12 +150,19 @@ section {
     height: 70vh;
     padding: 5px;
     margin: 10px 0px;
-    overflow-y: scroll; }
+    overflow-y: scroll;
+    position: relative; }
     @media (max-width: 768px) {
       section #screen {
         flex: 0 0 100%;
         margin: 0;
         height: 50vh; } }
+    section #screen p {
+      position: absolute;
+      bottom: 5px;
+      right: 5px;
+      font-size: 1.2rem;
+      color: #353631; }
     section #screen ul {
       display: flex;
       flex-direction: column;
