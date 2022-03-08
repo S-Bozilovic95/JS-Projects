@@ -1,6 +1,23 @@
 import Chatroom from "./chat.js"
 import ChatUI from "./ui.js"
 
+// drop menu
+let icon = document.querySelector("#dropBtn i");
+
+icon.addEventListener("click", e =>{       
+    if(opt1.style.display === "none"){
+        opt1.style.display = "block";
+    }else{
+        opt1.style.display = "none";
+    }
+})
+window.addEventListener("resize",e=>{
+    if (window.innerWidth>768) {
+        opt1.style.display = "block";
+    }
+})
+
+
 // reference
 let ul = document.querySelector("ul");
 let formSend = document.querySelector("#formMessage");
@@ -16,9 +33,7 @@ let formDates = document.querySelector("#formDates");
 let startDate = document.querySelector("#startDate");
 let endDate = document.querySelector("#endDate");
 let allButtons = document.querySelectorAll("button");
-let opt2 = document.querySelector("#opt2");
-let icon = document.querySelector("#dropBtn i");
-// let rsl = window.matchMedia(("min-width:768px"));
+
 
 
 // klase
@@ -29,6 +44,7 @@ let chatUI = new ChatUI(ul);
 setLocalColor();
 
 // funkcije
+
 
 // dodavanje poruke
 formSend.addEventListener("submit",e =>{
@@ -104,9 +120,6 @@ chatroom.getChats( data =>{
 })
 
 // brisanje poruka
-
-// let li = document.querySelector("i");
-
 ul.addEventListener("click",e =>{
     e.preventDefault();
 
@@ -176,22 +189,6 @@ formDates.addEventListener("submit",e=>{
 })
 
 
-// drop menu
-icon.addEventListener("click", e =>{       
-    if(opt2.style.display === "none"){
-        opt2.style.display = "block";
-        
-    }else{
-        opt2.style.display = "none";
-    }
-})
-
-
-window.addEventListener("resize",e=>{
-    if (window.innerWidth>768) {
-        opt2.style.display = "none";
-    }
-})
 
     
 
