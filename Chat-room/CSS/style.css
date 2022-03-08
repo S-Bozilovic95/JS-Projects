@@ -55,8 +55,6 @@ section {
     @media (max-width: 768px) {
       section #opt1 {
         display: none; } }
-  section #opt2 {
-    display: none; }
   section .options {
     display: flex;
     justify-content: flex-end;
@@ -171,17 +169,14 @@ section {
     height: 70vh;
     padding: 5px;
     margin: 10px 0px;
-    overflow-y: scroll;
-    position: relative; }
+    overflow-y: scroll; }
     @media (max-width: 768px) {
       section #screen {
         flex: 0 0 100%;
         margin: 0;
         height: 65vh; } }
     section #screen p {
-      position: absolute;
-      bottom: 5px;
-      right: 5px;
+      position: relative;
       font-size: 1.2rem;
       color: #353631; }
     section #screen ul {
