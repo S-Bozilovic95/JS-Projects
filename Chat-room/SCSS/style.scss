@@ -91,8 +91,25 @@ section{
             display: block;
         }
     }
+
+    #opt1{
+        display: block;
+
+        @media(max-width:768px) {
+           display: none;
+        }
+    }
+
     
-    #options{
+    #opt2{
+        display: none;
+
+        // @media(max-width:768px) {
+        //    display: block;
+        // }
+    }
+    
+    .options{
         @include flex(flex-end,flex-start ,column ,wrap );
         flex: 0 0 40%;
         width: 100%;
@@ -100,10 +117,8 @@ section{
         
         @media(max-width:768px) {
             flex: 0 0 100%;
+            // display: none;
         }
-
-        
-
 
         #buttons{
             width: 100%;
@@ -133,12 +148,10 @@ section{
                 @media(max-width:768px) {
                     font-size: 1rem;
                     padding: 5px;
-                    // width: 25%;
                     text-align: center;
                     background-color: $yellow;
                     color: $dark;
-                    border-radius: 0;
-                    // display: none;
+                    border-radius: 0;   
                 }
             }
 

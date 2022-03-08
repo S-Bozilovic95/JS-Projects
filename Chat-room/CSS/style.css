@@ -50,7 +50,14 @@ section {
     @media (max-width: 768px) {
       section #dropBtn {
         display: block; } }
-  section #options {
+  section #opt1 {
+    display: block; }
+    @media (max-width: 768px) {
+      section #opt1 {
+        display: none; } }
+  section #opt2 {
+    display: none; }
+  section .options {
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
@@ -60,14 +67,14 @@ section {
     width: 100%;
     margin-top: 10px; }
     @media (max-width: 768px) {
-      section #options {
+      section .options {
         flex: 0 0 100%; } }
-    section #options #buttons {
+    section .options #buttons {
       width: 100%; }
-      section #options #buttons .selected {
+      section .options #buttons .selected {
         background-color: #353631;
         color: #fec107; }
-      section #options #buttons button {
+      section .options #buttons button {
         padding: 15px;
         background: none;
         border: none;
@@ -75,20 +82,20 @@ section {
         color: white;
         width: 100%;
         border-radius: 5px; }
-        section #options #buttons button:hover {
+        section .options #buttons button:hover {
           background-color: #353631;
           color: #fec107;
           transition: 0.6s ease;
           cursor: pointer; }
         @media (max-width: 768px) {
-          section #options #buttons button {
+          section .options #buttons button {
             font-size: 1rem;
             padding: 5px;
             text-align: center;
             background-color: #fec107;
             color: #353631;
             border-radius: 0; } }
-    section #options #colorForm {
+    section .options #colorForm {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -96,18 +103,18 @@ section {
       flex-wrap: wrap;
       width: 100%;
       margin: 20px auto; }
-      section #options #colorForm label {
+      section .options #colorForm label {
         font-size: 1.3rem;
         color: white;
         padding: 10px; }
-      section #options #colorForm #pickColor {
+      section .options #colorForm #pickColor {
         width: 20%;
         background-color: #353631;
         outline: none;
         border: none;
         border-radius: 5px;
         padding: 2px; }
-      section #options #colorForm #setColor {
+      section .options #colorForm #setColor {
         margin: 5px;
         width: 20%;
         padding: 10px;
@@ -116,23 +123,23 @@ section {
         background-color: #fec107;
         outline: none;
         border: none; }
-        section #options #colorForm #setColor:hover {
+        section .options #colorForm #setColor:hover {
           background-color: #e7be44af;
           cursor: pointer;
           transition: 0.6s ease; }
-    section #options #formDates {
+    section .options #formDates {
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
       flex-wrap: wrap;
       width: 100%; }
-      section #options #formDates label {
+      section .options #formDates label {
         font-size: 1.3rem;
         color: white;
         padding: 10px; }
-      section #options #formDates #startDate,
-      section #options #formDates #endDate {
+      section .options #formDates #startDate,
+      section .options #formDates #endDate {
         padding: 10px;
         font-size: 1.2rem;
         border-radius: 5px;
@@ -140,11 +147,11 @@ section {
         border: none;
         margin: 5px auto; }
         @media (max-width: 768px) {
-          section #options #formDates #startDate,
-          section #options #formDates #endDate {
+          section .options #formDates #startDate,
+          section .options #formDates #endDate {
             font-size: 1rem;
             padding: 5px; } }
-      section #options #formDates #setDate {
+      section .options #formDates #setDate {
         margin: 5px;
         width: 20%;
         padding: 10px;
@@ -153,7 +160,7 @@ section {
         background-color: #fec107;
         outline: none;
         border: none; }
-        section #options #formDates #setDate:hover {
+        section .options #formDates #setDate:hover {
           background-color: #e7be44af;
           cursor: pointer;
           transition: 0.6s ease; }

@@ -16,8 +16,9 @@ let formDates = document.querySelector("#formDates");
 let startDate = document.querySelector("#startDate");
 let endDate = document.querySelector("#endDate");
 let allButtons = document.querySelectorAll("button");
-let optionsMenu = document.querySelector("#options");
+let opt2 = document.querySelector("#opt2");
 let icon = document.querySelector("#dropBtn i");
+// let rsl = window.matchMedia(("min-width:768px"));
 
 
 // klase
@@ -174,8 +175,23 @@ formDates.addEventListener("submit",e=>{
 
 })
 
-// drop menu
 
+// drop menu
+icon.addEventListener("click", e =>{       
+    if(opt2.style.display === "none"){
+        opt2.style.display = "block";
+        
+    }else{
+        opt2.style.display = "none";
+    }
+})
+
+
+window.addEventListener("resize",e=>{
+    if (window.innerWidth>768) {
+        opt2.style.display = "none";
+    }
+})
 
     
 

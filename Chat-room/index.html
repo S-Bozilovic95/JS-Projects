@@ -24,7 +24,29 @@
     <!-- rooms section -->
     <section>
         <div id="dropBtn"><i class="fas fa-bars of"></i></div>
-        <div id="options" class="of">
+        <div id="opt1" class="options">
+            <div id="buttons">
+                <button id="general">#general</button>
+                <button id="homework">#homework</button>
+                <button id="js">#js</button>
+                <button id="test">#test</button>
+            </div>
+
+            <form id="colorForm">
+                <label for="pickColor">Pick color:</label>
+                <input type="color" name="color" id="pickColor" value="#ffffff">
+                <input type="submit" value="set" id="setColor">
+            </form>
+
+            <form id="formDates">
+                <label for="">Filter Date:</label>
+                <input type="datetime-local" id="startDate">
+                <input type="datetime-local" id="endDate">
+                <input type="submit" value="set" id="setDate">
+            </form>
+        </div>
+
+        <div id="opt2" class="options">
             <div id="buttons">
                 <button id="general">#general</button>
                 <button id="homework">#homework</button>
