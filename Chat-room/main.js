@@ -16,6 +16,9 @@ let formDates = document.querySelector("#formDates");
 let startDate = document.querySelector("#startDate");
 let endDate = document.querySelector("#endDate");
 let allButtons = document.querySelectorAll("button");
+let optionsMenu = document.querySelector("#options");
+let icon = document.querySelector("#dropBtn i");
+
 
 // klase
 let chatroom = new Chatroom(checkLocal(localStorage.room,"general"),checkLocal(localStorage.username,"anonymus"));
@@ -157,18 +160,25 @@ colorForm.addEventListener("submit",e =>{
 // sortiranje datuma
 formDates.addEventListener("submit",e=>{
     e.preventDefault();
-    ul.innerHTML = "";
+
 
     if(startDate.value.length === 0 || endDate.value.length === 0){
         alert("Invalid date insert!");
     }else{
         chatroom.sortMessage(startDate.value,endDate.value,data =>{
+            ul.innerHTML = "";
             chatUI.templateLI(data);
             chatUI.reorderMessages(checkLocal(localStorage.username,"anonymus"));
         });
     }
 
 })
+
+// drop menu
+
+
+    
+
 
 
 

@@ -19,6 +19,7 @@ $transition: .6s ease;
 }
 
 
+
 // default styles
 *{
     padding: 0;
@@ -68,17 +69,40 @@ section{
         padding: 0px;
     }
 
+
+
+    #dropBtn{
+        width: 100%;
+        display: none;
+        
+        i{
+            font-size: 1.5rem;
+            padding: 5px;
+            color: $yellow;
+
+            &:hover{
+                cursor: pointer;
+                transition: $transition;
+                color: $lightgray;
+            }
+        }
+
+        @media(max-width:768px) {
+            display: block;
+        }
+    }
     
     #options{
         @include flex(flex-end,flex-start ,column ,wrap );
         flex: 0 0 40%;
-        margin: 20px 0px;
         width: 100%;
+        margin-top: 10px;
         
         @media(max-width:768px) {
             flex: 0 0 100%;
         }
 
+        
 
 
         #buttons{
@@ -218,7 +242,7 @@ section{
         @media(max-width:768px) {
             flex: 0 0 100%;
             margin: 0;
-            height: 50vh;
+            height: 65vh;
         }
 
         p{
