@@ -1,6 +1,7 @@
 const apiKey = "b41d8378d8be38b87e183995a2c381d1";
-// const apiKey ="4fced5fdb22dc1bd31f09bc568ffd9fd";
+
 let inpuCity = document.querySelector("#inputCity");
+let ispis = document.querySelector("#ispis");
 
 function getData(resource){
     
@@ -24,13 +25,36 @@ function getData(resource){
 
 
 
-fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${`krusevac`}&limit=1&appid=${apiKey}`)
-.then(function(data){
-   return data.json();
-})
-.then(function(obj){
-    console.log(obj);
-    obj.forEach(el => {
-        console.log();
-    });
-})
+
+async function getWeather(city){
+    let lat;
+    let lon;
+
+    await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}`)
+    .then(function(data){
+        return data.json();
+     })
+    .then(function (obj){
+        lat = obj[0].lat;
+        lon = obj[0].lon;
+    })
+    
+
+  let mainObject = await fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`)
+    .then(function (data){
+        return data.json();
+    })
+    .then(function(obj){
+        return obj;
+    })
+
+    console.log(mainObject.list[0]);
+   mainObject.list.forEach((el,i) => {
+       if(i%4 ===0){
+        ispis.innerHTML += `<div><img src="http://openweathermap.org/img/w/${el.weather[0].icon}.png"><p>${el.main.temp}</p><p>${el.weather[0].description}</p><p>${el.dt_txt}</p></div>`;
+       }
+   });
+    
+}
+
+getWeather(`krusevac`);
