@@ -3,4 +3,9 @@
   margin: 0;
   box-sizing: border-box; }
 
+#ispis ul li {
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+
 /*# sourceMappingURL=style.css.map */
