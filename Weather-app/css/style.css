@@ -8,18 +8,25 @@ main {
   margin: 30px auto;
   width: 80%;
   height: 80vh;
-  border: 1px solid yellow; }
+  border: 1px solid yellow;
+  overflow-y: scroll; }
   main #container #current {
-    display: flex; }
+    display: flex;
+    align-items: center;
+    margin: 20px auto; }
     main #container #current img {
       width: 110px;
       height: auto; }
+    main #container #current .row .flags {
+      align-self: center;
+      width: 25px;
+      border: 1px solid black; }
   main #containerTwo {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+    position: fixed;
+    width: 80%;
+    height: 80vh;
+    margin: 30px auto;
     top: 0;
-    left: 0;
     border: 1px solid red;
     background-color: rgba(39, 36, 36, 0.185);
     display: none; }

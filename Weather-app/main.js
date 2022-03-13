@@ -10,7 +10,6 @@ let fiveDay = document.querySelector("#fiveDay");
 let back = document.querySelector("#back");
 
 
-
 // current weather
 async function getCurrent(city){
     let lat;
@@ -36,7 +35,7 @@ async function getCurrent(city){
 
     let current = document.createElement("div");
     current.id = "current";
-    current.innerHTML = `<img src="http://openweathermap.org/img/w/${mainObject.weather[0].icon}.png"><div class="row"><h3>${location[0].name}, ${location[0].country} ${mainObject.weather[0].description}</h3><button type="button" class ="show" value="${location[0].name}">5 day forecats</button><p>current temperature: <span>${mainObject.main.temp}C°</span> | min: ${mainObject.main.temp_min}C° | max: ${mainObject.main.temp_max}C° | wind: ${mainObject.wind.speed} m/s | clouds: ${mainObject.clouds.all}% | pressure: ${mainObject.main.pressure} hpa</p><p>Geo coords [${lat}, ${lon}]</p></div>`;
+    current.innerHTML = `<img src="http://openweathermap.org/img/w/${mainObject.weather[0].icon}.png"><div class="row"><h3>${location[0].name}, ${location[0].country === "XK"? "RS" : location[0].country} <img src="flags/${location[0].country === "XK"? "rs" : location[0].country.toLowerCase()}.svg" alt="State flag" class="flags"> ${mainObject.weather[0].description}</h3><button type="button" class ="show" value="${location[0].name}">5 day forecats</button><p>current temperature: <span>${mainObject.main.temp}C°</span> | min: ${mainObject.main.temp_min}C° | max: ${mainObject.main.temp_max}C° | wind: ${mainObject.wind.speed} m/s | clouds: ${mainObject.clouds.all}% | pressure: ${mainObject.main.pressure} hpa</p><p>Geo coords [${lat}, ${lon}]</p></div>`;
     container.appendChild(current);
 
     let buttons = document.querySelectorAll(".show");
@@ -46,6 +45,8 @@ async function getCurrent(city){
             getWeather5(e.currentTarget.value);
         })
     })
+
+
 }
 
 
