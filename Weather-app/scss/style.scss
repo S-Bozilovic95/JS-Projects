@@ -4,14 +4,51 @@
     box-sizing: border-box;
 }
 
+main{
+    position: relative;
+    margin:30px auto;
+    width: 80%;
+    height: 80vh;
+    border: 1px solid yellow;
+    #container{
 
-#ispis{
-    ul{
-
-        li{
+   
+        
+        #current{
             display: flex;
-            justify-content: space-around;
-            align-items: center;
+    
+            img{
+                width: 110px;
+                height: auto;
+            }
+        }
+    }
+    
+    
+    #containerTwo{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        border: 1px solid red;
+        background-color: rgba(39, 36, 36, 0.185);
+        display: none;
+    
+        #fiveDay{
+            position: absolute;
+            top: 40%;
+            left: 10%;
+            right: 10%;
+            
+    
+            #fiveDayItem{
+                width: 20%;
+                display: inline-block;
+                text-align: center;
+    
+            }
+            
         }
     }
 }

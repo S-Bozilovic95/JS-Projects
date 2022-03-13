@@ -3,9 +3,34 @@
   margin: 0;
   box-sizing: border-box; }
 
-#ispis ul li {
-  display: flex;
-  justify-content: space-around;
-  align-items: center; }
+main {
+  position: relative;
+  margin: 30px auto;
+  width: 80%;
+  height: 80vh;
+  border: 1px solid yellow; }
+  main #container #current {
+    display: flex; }
+    main #container #current img {
+      width: 110px;
+      height: auto; }
+  main #containerTwo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: 1px solid red;
+    background-color: rgba(39, 36, 36, 0.185);
+    display: none; }
+    main #containerTwo #fiveDay {
+      position: absolute;
+      top: 40%;
+      left: 10%;
+      right: 10%; }
+      main #containerTwo #fiveDay #fiveDayItem {
+        width: 20%;
+        display: inline-block;
+        text-align: center; }
 
 /*# sourceMappingURL=style.css.map */
